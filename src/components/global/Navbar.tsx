@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-// import { MenuIcon } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 // import { UserButton, currentUser } from "@clerk/nextjs";
 import React from "react";
 
@@ -53,8 +53,8 @@ const Navbar = async (props: Props) => {
             {false ? "Dashboard" : "Get Started"}
           </span>
         </Link>
-        {/* {user ? <UserButton afterSignOutUrl="/" /> : null}
-        <MenuIcon className="md:hidden" /> */}
+        {/* {user ? <UserButton afterSignOutUrl="/" /> : null} */}
+        <MenuIcon className="md:hidden" />
       </aside>
     </header>
   );
