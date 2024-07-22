@@ -1,9 +1,11 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { AnyZodTuple } from "zod";
 import UploadCareButton from "./uploadcare-button";
+import { useRouter } from "next/navigation";
 
 type Props = {
   userImage: string | null;
@@ -12,6 +14,14 @@ type Props = {
 };
 
 function ProfilePicture({ userImage, onDelete, onUpload }: Props) {
+  const router = useRouter();
+
+  const onRemoveProfileImage = async () => {
+    const response = await onDelete();
+    if (response) {
+      router.refresh();
+    }
+  };
   return (
     <div className="flex flex-col">
       <p className="text-lg text-white">Profile Picture</p>
